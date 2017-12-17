@@ -3,23 +3,11 @@
 ## Entity
 
 Basic entity.
+In case of using space in entity name, you can use keyword "as".
 
 ```uml
 @startuml
     entity entity1 {
-        attribute
-    }
-    entity entity2 {
-        attribute
-    }
-@enduml
-```
-
-In case of using space in entity name.
-
-```uml
-@startuml
-    entity "entity 1" as entity1 {
         attribute
     }
     entity "entity 2" as entity2 {
@@ -115,6 +103,8 @@ Attribute can be bold, italic, underline and other style.
 @enduml
 ```
 
+## Separator
+
 Separator can be used as many times as desired.
 And there are some style of separator.
 
@@ -146,8 +136,63 @@ Can write title in separator.
 @enduml
 ```
 
-## Relation
+## Relation (Cardinality)
 
+Basic relation.
+You can specify the position.
+
+```uml
+@startuml
+    entity entity {
+    }
+    entity up {
+    }
+    entity down {
+    }
+    entity right {
+    }
+    entity left {
+    }
+
+    entity -up- up
+    entity -do- down
+    entity -ri- right
+    entity -le- left
+@enduml
+```
+
+Labeling.
+
+```uml
+@startuml
+    entity entity1 {
+    }
+    entity entity2 {
+    }
+
+    entity1 -ri- entity2 : labeling
+    entity1 -ri- entity2 : arrow >
+    entity1 -ri- entity2 : arrow <
+@enduml
+```
+
+Style of cardinality.
+
+```uml
+@startuml
+    entity entity1 {
+    }
+    entity entity2 {
+    }
+
+    entity1 -ri- entity2 : one >
+    entity1 -ri-o| entity2 : zero or one >
+    entity1 -ri-o{ entity2 : zero or many >
+    entity1 -ri-|| entity2 : one and only one >
+    entity1 -ri-|{ entity2 : one or many >
+    entity1 -ri-{ entity2 : many >
+@enduml
+```
 
 ## Other
 
