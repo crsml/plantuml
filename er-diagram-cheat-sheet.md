@@ -32,10 +32,11 @@
 ```uml
 @startuml
     entity entity1 {
+        primary_key
+        --
         attribute
     }
     entity "entity 2" as entity2 {
-        attribute
     }
 @enduml
 ```
@@ -45,10 +46,8 @@
 ```uml
 @startuml
     entity master <<M, DDAA00>> {
-        attribute
     }
     entity 主テーブル <<主, 00AADD>> {
-        attribute
     }
 @enduml
 ```
@@ -58,25 +57,18 @@
 ```uml
 @startuml
     entity red #red {
-        attribute
     }
     entity blue #blue {
-        attribute
     }
     entity custermize #AAEEBB {
-        attribute
     }
     entity gradation1 #red-green {
-        attribute
     }
     entity gradation2 #red|green {
-        attribute
     }
     entity gradation3 #red/green {
-        attribute
     }
     entity gradation4 #red\green {
-        attribute
     }
 @enduml
 ```
@@ -86,10 +78,8 @@
 ```uml
 @startuml
     entity entity1 <label type 1> {
-        attribute
     }
     entity entity2 <<label type 2>> {
-        attribute
     }
 @enduml
 ```
