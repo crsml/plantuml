@@ -1,9 +1,33 @@
 # ER Diagram Cheat Sheet
 
+## Contents
+
+- [Entity](#entity)
+  - [Basic Entity](#basic-entity)
+  - [Mark Character](#mark-character)
+  - [Entity Color](#entity-color)
+  - [Entity Label](#entity-label)
+- [Attribute](#attribute)
+  - [Attribute Symbol](#attribute-symbol)
+  - [Attribute Style](#attribute-style)
+- [Separator](#separator)
+  - [Separator Style](#separator-style)
+  - [Separator Title](#separator-title)
+- [Relation](#relation)
+  - [Basic Relation](#basic-relation)
+  - [Relation Label](#relation-label)
+  - [Cardinality](#cardinality)
+- [Package](#package)
+  - [Package Style](#package-style)
+  - [Package Relation](#package-relation)
+- [Other](#other)
+  - [Skin Parameter](#skin-parameter)
+  - [Constant Value](#constant-value)
+  - [Memo](#memo)
+
 ## Entity
 
-Basic entity.
-In case of using space in entity name, you can use keyword "as".
+### Basic Entity
 
 ```uml
 @startuml
@@ -16,9 +40,7 @@ In case of using space in entity name, you can use keyword "as".
 @enduml
 ```
 
-Change "E" to another character.
-All character can be used only if this character is single.
-You can change color at same time.
+### Mark Character
 
 ```uml
 @startuml
@@ -31,7 +53,7 @@ You can change color at same time.
 @enduml
 ```
 
-Change entity color.
+### Entity Color
 
 ```uml
 @startuml
@@ -59,7 +81,7 @@ Change entity color.
 @enduml
 ```
 
-Labeling.
+### Entity Label
 
 ```uml
 @startuml
@@ -74,11 +96,11 @@ Labeling.
 
 ## Attribute
 
-There are some symbol placed at first of attribute.
+### Attribute Symbol
 
 ```uml
 @startuml
-    entity "symbol for attribute" {
+    entity "attribute symbol" {
         + green circle
         - red square
         # yellow diamond
@@ -89,11 +111,11 @@ There are some symbol placed at first of attribute.
 @enduml
 ```
 
-Attribute can be bold, italic, underline and other style.
+### Attribute Style
 
 ```uml
 @startuml
-    entity "style of attribute" {
+    entity "attribute style" {
         normal
         <b> bold
         <i> italic
@@ -105,12 +127,11 @@ Attribute can be bold, italic, underline and other style.
 
 ## Separator
 
-Separator can be used as many times as desired.
-And there are some style of separator.
+### Separator Style
 
 ```uml
 @startuml
-    entity "style of separator" {
+    entity "separator style" {
         normal
         --
         double
@@ -123,11 +144,11 @@ And there are some style of separator.
 @enduml
 ```
 
-Can write title in separator.
+### Separator Title
 
 ```uml
 @startuml
-    entity "title in separator" {
+    entity "separator title" {
         -- normal --
         == double ==
         .. dot ..
@@ -136,10 +157,9 @@ Can write title in separator.
 @enduml
 ```
 
-## Relation (Cardinality)
+## Relation
 
-Basic relation.
-You can specify the position.
+### Basic Relation
 
 ```uml
 @startuml
@@ -161,7 +181,7 @@ You can specify the position.
 @enduml
 ```
 
-Labeling.
+### Relation Label
 
 ```uml
 @startuml
@@ -176,7 +196,7 @@ Labeling.
 @enduml
 ```
 
-Style of cardinality.
+### Cardinality
 
 ```uml
 @startuml
@@ -194,9 +214,115 @@ Style of cardinality.
 @enduml
 ```
 
+## Package
+
+### Package Style
+
+```uml
+@startuml
+    package default {
+        entity entity1 {
+        }
+    }
+
+    package node <<Node>> {
+        entity entity2 {
+        }
+    }
+
+    package rectangle <<Rectangle>> {
+        entity entity3 {
+        }
+    }
+
+    package frame <<Frame>> {
+        entity entity4 {
+        }
+    }
+
+    package cloud <<Cloud>> {
+        entity entity5 {
+        }
+    }
+
+    package database <<Database>> {
+        entity entity6 {
+        }
+    }
+
+    package folder <<Folder>> {
+        entity entity7 {
+        }
+    }
+@enduml
+```
+
+### Package Relation
+
+```uml
+@startuml
+    package package1 <<Node>> {
+        entity entity1 {
+        }
+    }
+
+    package package2 <<Node>> {
+        entity entity2 {
+        }
+    }
+
+    package1 -ri- package2
+@enduml
+```
+
 ## Other
 
+### Skin Parameter
 
+```uml
+@startuml
+    skinparam class {
+        BackgroundColor PaleGreen
+        ArrowColor SeaGreen
+        BorderColor Green
+    }
 
+    entity entity1 {
+    }
+    entity entity2 {
+    }
 
+    entity1 -ri- entity2
+@enduml
+```
 
+### Constant Value
+
+```uml
+@startuml
+    !define RED #FFAAAA
+
+    entity entity1 RED {
+    }
+    entity entity2 RED {
+    }
+@enduml
+```
+
+### Memo
+
+```uml
+@startuml
+    entity entity1 {
+    }
+    entity entity2 {
+    }
+
+    note top of entity1 : this is note1.
+    note bottom of entity2 : this is note2.
+    note right of entity2 : this is note3.\nnext line.
+
+    entity1 -ri- entity2
+    note on link : this is note4.
+@enduml
+```
