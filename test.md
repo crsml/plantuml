@@ -4,7 +4,7 @@
 
 ```uml
 @startuml
-    !define RED #ff0000
+    !define RED  #FF0000
     !define BLUE #0000FF
 
     entity "parent" RED {
@@ -19,7 +19,6 @@
     }
 
     parent ||--o{ child
-
 @enduml
 ```
 
@@ -27,7 +26,6 @@
 
 ```uml
 @startuml
-
     entity "parent" RED {
         + parent_id
         --
@@ -40,7 +38,6 @@
     }
 
     parent ||--o{ child
-
 @enduml
 ```
 
@@ -62,6 +59,5 @@
     }
 
     parent ||--o{ child
-
 @enduml
 ```
